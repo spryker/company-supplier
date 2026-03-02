@@ -14,11 +14,6 @@ use Orm\Zed\CompanySupplier\Persistence\SpyCompanyTypeQuery;
 
 class CompanySupplierHelper extends Module
 {
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\CompanyTypeTransfer
-     */
     public function haveCompanyType(array $seedData = []): CompanyTypeTransfer
     {
         $companyTypeTransfer = (new CompanyTypeBuilder($seedData))->build();

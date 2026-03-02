@@ -73,11 +73,6 @@ class CompanySupplierRepository extends AbstractRepository implements CompanySup
         return $this->getCompanySupplierCollectionFromQuery($query);
     }
 
-    /**
-     * @param \Orm\Zed\Company\Persistence\SpyCompanyQuery $query
-     *
-     * @return \Generated\Shared\Transfer\CompanySupplierCollectionTransfer
-     */
     protected function getCompanySupplierCollectionFromQuery(SpyCompanyQuery $query): CompanySupplierCollectionTransfer
     {
         $companySuppliers = new ArrayObject(

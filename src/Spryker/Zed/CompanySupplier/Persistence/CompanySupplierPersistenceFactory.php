@@ -20,25 +20,16 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class CompanySupplierPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\CompanySupplier\Persistence\SpyCompanyTypeQuery
-     */
     public function createCompanyTypeQuery(): SpyCompanyTypeQuery
     {
         return SpyCompanyTypeQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\CompanySupplier\Persistence\SpyCompanySupplierToProductQuery
-     */
     public function createCompanySupplierToProductQuery(): SpyCompanySupplierToProductQuery
     {
         return SpyCompanySupplierToProductQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Company\Persistence\SpyCompanyQuery
-     */
     public function createCompanyQuery(): SpyCompanyQuery
     {
         return $this->getProvidedDependency(CompanySupplierDependencyProvider::PROPEL_QUERY_COMPANY);

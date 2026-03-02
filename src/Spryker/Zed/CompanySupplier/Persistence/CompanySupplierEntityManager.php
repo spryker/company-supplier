@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class CompanySupplierEntityManager extends AbstractEntityManager implements CompanySupplierEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConcreteTransfer
-     */
     public function saveCompanySupplierRelationsForProductConcrete(ProductConcreteTransfer $productConcreteTransfer): ProductConcreteTransfer
     {
         $this->deleteCompanySupplierRelationsById($productConcreteTransfer->getIdProductConcrete());
@@ -35,11 +30,6 @@ class CompanySupplierEntityManager extends AbstractEntityManager implements Comp
         return $productConcreteTransfer;
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return void
-     */
     protected function deleteCompanySupplierRelationsById(int $idProduct): void
     {
         $this->getFactory()->createCompanySupplierToProductQuery()

@@ -44,9 +44,6 @@ class CompanySupplierFacadeTest extends Unit
      */
     protected $productConcrete;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class CompanySupplierFacadeTest extends Unit
         $this->prepareProductConcreteWithSupplierCompanies();
     }
 
-    /**
-     * @return void
-     */
     public function testGetCompanyTypesReturnsNotEmptyCollection(): void
     {
         // Act
@@ -67,9 +61,6 @@ class CompanySupplierFacadeTest extends Unit
         $this->assertGreaterThan(0, $companyTypesCollection->getCompanyTypes()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testGetAllSuppliersReturnsCompanySuppliers(): void
     {
         // Act
@@ -80,9 +71,6 @@ class CompanySupplierFacadeTest extends Unit
         $this->assertSame(static::COMPANY_TYPE_SUPPLIER, $supplierCompanies->getSuppliers()[0]->getCompanyType()->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveCompanySupplierStoreRelations(): void
     {
         // Arrange
@@ -100,9 +88,6 @@ class CompanySupplierFacadeTest extends Unit
         $this->assertGreaterThan(0, $CompanySupplierProductRelations->getSuppliers()->count());
     }
 
-    /**
-     * @return void
-     */
     protected function setupCompanySupplier(): void
     {
         $companyType = $this->tester->haveCompanyType(['name' => static::COMPANY_TYPE_SUPPLIER]);
@@ -111,9 +96,6 @@ class CompanySupplierFacadeTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     protected function prepareProductConcreteWithSupplierCompanies(): void
     {
         $productConcrete = $this->tester->haveProduct();
